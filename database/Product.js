@@ -1,0 +1,21 @@
+const mongoose = require('mongoose');
+
+mongoose.Promise = global.Promise;
+
+const productSchema = new mongoose.Schema({
+  itemNum: Number,
+  name: String,
+  brand: String,
+  price: Number,
+  colors: [String],
+  description: String,
+  img_url: String,
+  category: String,
+  rating: Number,
+  reviews: Number,
+  features: [String],
+});
+
+const Product = mongoose.model('Product', productSchema);
+
+module.exports = Product;

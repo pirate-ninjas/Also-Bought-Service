@@ -11,15 +11,24 @@ module.exports = {
     path: DIST_DIR,
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.jsx?/,
-        include: SRC_DIR,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015'],
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['@babel/preset-env'],
+              ['@babel/preset-react'],
+              ['airbnb'],
+            ],
+          },
         },
       },
     ],
   },
+  resolve: { extensions: ['.js', '.jsx'] },
+  mode: 'development',
+  watch: true,
 };
