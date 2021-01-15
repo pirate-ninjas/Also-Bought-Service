@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 const productSchema = new mongoose.Schema({
+  itemNum: Number,
   name: String,
   brand: String,
   price: Number,

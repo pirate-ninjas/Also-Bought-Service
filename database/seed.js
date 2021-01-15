@@ -3,7 +3,7 @@
 const faker = require('faker');
 const mongoose = require('mongoose');
 const Product = require('./Product.js');
-const db = require('./index.js');
+require('./index.js');
 
 const randomProducts = [];
 
@@ -16,6 +16,7 @@ for (let i = 0; i < 100; i++) {
   }
   color = Array.from(color);
   const product = {
+    itemNum: i,
     name: faker.commerce.productName(),
     brand: faker.company.companyName(),
     price: faker.commerce.price(),
