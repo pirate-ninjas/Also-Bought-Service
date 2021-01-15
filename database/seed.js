@@ -3,7 +3,6 @@
 const faker = require('faker');
 const mongoose = require('mongoose');
 const Product = require('./Product.js');
-require('./index.js');
 
 const randomProducts = [];
 
@@ -38,6 +37,7 @@ function insertRandomProducts() {
     })
     .catch((err) => {
       console.log(err);
+      mongoose.connection.close();
     });
 }
 
