@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+mongoose.connect('mongodb://localhost/fec');
+
 mongoose.Promise = global.Promise;
 
 const productSchema = new mongoose.Schema({
