@@ -14,7 +14,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static(path.join(__dirname, '/../client/dist')));
+app.use(express.static(path.join(__dirname, '/../public')));
 
 app.get('/api/products/:itemid/alsoliked', (req, res) => {
   const itemNum = parseInt(req.params.itemid, 10) + 1;
