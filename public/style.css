@@ -1,0 +1,42 @@
+body {
+  font-family: Graphik,Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  letter-spacing: -.16px;
+  color: rgba(12,11,8,.75);
+  background-color: #fff;
+}
+
+.alsoBought {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.brandname, .reviewers, .price {
+
+  font-size: 12px;
+
+}
+
+.brandname, .productname, .rating, .price {
+  margin: 5px 0px;
+}
+
+.productname {
+  font-weight: bold;
+}
+
+.rating {
+}
+
+.stars {
+
+}
+
+.reviewers {
+  margin-left: 5px;
+}
+
+.price {
+
+
+}
