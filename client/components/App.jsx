@@ -6,38 +6,45 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [],
-      vis: 'onHoverHidden',
+      alsoliked: [],
+      ultbought: [],
     };
     this.alsoLiked = this.alsoLiked.bind(this);
-    this.show = this.show.bind(this);
-    this.hide = this.hide.bind(this);
+    this.ultBought = this.ultBought.bind(this);
   }
 
   componentDidMount() {
-    this.alsoLiked(50);
-  }
-
-  show() {
-    this.setState({ vis: 'onHoverDisplay' });
-  }
-
-  hide() {
-    this.setState({ vis: 'onHoverHidden' });
+    this.alsoLiked(25);
+    this.ultBought(25);
   }
 
   alsoLiked(item) {
     axios.get(`/api/products/${item}/alsoliked`)
       .then((res) => {
-        this.setState({ items: res.data });
+        this.setState({ alsoliked: res.data });
+      });
+  }
+
+  ultBought(item) {
+    axios.get(`/api/products/${item}/ultbought`)
+      .then((res) => {
+        this.setState({ ultbought: res.data });
       });
   }
 
   render() {
-    const { items } = this.state;
-    const { vis } = this.state;
+    const { alsoliked, ultbought } = this.state;
     return (
-      <ItemList items={items} vis={vis} show={this.show} hide={this.hide} />
+      <div className="container">
+        <span id="title">People also liked</span>
+        <div id="carousel1">
+          <ItemList items={alsoliked} id="alsoliked" mod={1} />
+        </div>
+        <span id="title">People ultimately bought</span>
+        <div id="carousel2">
+          <ItemList items={ultbought} id="ultbought" mod={0} />
+        </div>
+      </div>
     );
   }
 }

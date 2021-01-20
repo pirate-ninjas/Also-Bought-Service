@@ -21,7 +21,7 @@ app.get('/test', (req, res) => {
 });
 
 app.get('/api/products/:itemid/alsoliked', (req, res) => {
-  const itemNum = parseInt(req.params.itemid, 10);
+  const itemNum = parseInt(req.params.itemid, 10) + 1;
   let numOfProducts = 10;
   if (99 - itemNum < 10) {
     numOfProducts = 99 - itemNum;
