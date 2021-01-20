@@ -7,12 +7,23 @@ class App extends React.Component {
     super(props);
     this.state = {
       items: [],
+      vis: 'onHoverHidden',
     };
     this.alsoLiked = this.alsoLiked.bind(this);
+    this.show = this.show.bind(this);
+    this.hide = this.hide.bind(this);
   }
 
   componentDidMount() {
     this.alsoLiked(50);
+  }
+
+  show() {
+    this.setState({ vis: 'onHoverDisplay' });
+  }
+
+  hide() {
+    this.setState({ vis: 'onHoverHidden' });
   }
 
   alsoLiked(item) {
@@ -24,8 +35,9 @@ class App extends React.Component {
 
   render() {
     const { items } = this.state;
+    const { vis } = this.state;
     return (
-      <ItemList items={items} />
+      <ItemList items={items} vis={vis} show={this.show} hide={this.hide} />
     );
   }
 }
