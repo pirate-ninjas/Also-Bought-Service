@@ -1,11 +1,11 @@
 body {
   font-family: Graphik,Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  letter-spacing: -.16px;
+  letter-spacing: -.016rem;
   color: rgba(12,11,8,.75);
   background-color: #fff;
 }
 
-.alsoBought {
+.alsoLiked {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -29,7 +29,21 @@ body {
 }
 
 .stars {
+  -webkit-text-stroke: 1px goldenrod;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
+.starsFilled {
+  color: gold;
+  -webkit-text-stroke: 1px goldenrod;
+}
+
+.starsBlank {
+  background: linear-gradient( 90deg, gold, gold 50%, transparent 50%);
+  -webkit-text-stroke: 1px goldenrod;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .reviewers {
@@ -39,4 +53,14 @@ body {
 .price {
 
 
+}
+
+#alsoliked {
+  display: flex;
+  flex-direction: column;
+}
+
+#peopleliked {
+  margin-bottom: 10px;
+  font-size: 20px;
 }
