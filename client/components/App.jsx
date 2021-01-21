@@ -7,7 +7,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       alsoliked: [],
+      alsoView: [],
       ultbought: [],
+      ultView: [],
     };
     this.alsoLiked = this.alsoLiked.bind(this);
     this.ultBought = this.ultBought.bind(this);
@@ -17,6 +19,8 @@ class App extends React.Component {
     this.alsoLiked(25);
     this.ultBought(25);
   }
+
+  
 
   alsoLiked(item) {
     axios.get(`/api/products/${item}/alsoliked`)
@@ -38,11 +42,11 @@ class App extends React.Component {
       <div className="container">
         <span id="title">People also liked</span>
         <div id="carousel1">
-          <ItemList items={alsoliked} id="alsoliked" mod={1} />
+          <ItemList items={alsoliked} mod={1} />
         </div>
         <span id="title">People ultimately bought</span>
         <div id="carousel2">
-          <ItemList items={ultbought} id="ultbought" mod={0} />
+          <ItemList items={ultbought} mod={0} />
         </div>
       </div>
     );

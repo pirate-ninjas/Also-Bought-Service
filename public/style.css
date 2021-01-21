@@ -9,9 +9,48 @@ body {
   position: relative;
 }
 
-.alsoliked, .ultbought {
+.carousel {
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.tray {
+  /* border: 1px solid blue; */
+}
+
+.slideLeft, .slideRight {
+  background-color: #f9f8f6;
+  box-shadow: 0px 5px 5px rgb(196, 196, 196);
+  font-size: 20px;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 4;
+}
+
+.slideLeft:hover, .slideRight:hover {
+  -webkit-text-stroke: 1px black;
+  box-shadow: 0px 5px 5px grey;
+}
+
+.slideLeft {
+  margin-right: -20px;
+}
+
+.slideRight {
+  margin-left: -20px;
+}
+
+.productSlide {
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
 }
 
 .productcard {
@@ -116,16 +155,6 @@ button.util {
 
 button.util:hover {
   box-shadow: inset 0 0 0 3px #4e4d49;
-}
-
-#carousel1 {
-  /* position: absolute; */
-  z-index: 1;
-}
-
-#carousel2 {
-  /* position: absolute; */
-  z-index: 1;
 }
 
 #title {
