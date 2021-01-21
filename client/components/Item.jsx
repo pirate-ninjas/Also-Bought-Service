@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
 class Item extends React.Component {
@@ -22,8 +23,8 @@ class Item extends React.Component {
     function getStars(rating) {
       return Math.floor((rating / 5) * 100);
     }
-    let { item, idx, mod } = this.props;
-    let { view } = this.state;
+    const { item, idx, mod } = this.props;
+    const { view } = this.state;
     return (
       <div className="productcard" key={idx} onMouseEnter={this.show} onMouseLeave={this.hide}>
         <div className="productimg"><a href={`https://www.rei.com/product/${item.itemNum}`}><img alt={item.name} src={`${item.img_url}/sig=${idx * mod + mod}`} /></a></div>

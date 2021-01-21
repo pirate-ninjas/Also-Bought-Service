@@ -47,7 +47,6 @@ app.get('/api/products/:itemid/ultbought', (req, res) => {
   if (99 - itemNum < 10) {
     numOfProducts = 99 - itemNum;
   }
-  console.log(itemNum, numOfProducts);
   Product.find({
     itemNum: {
       $gte: itemNum,
