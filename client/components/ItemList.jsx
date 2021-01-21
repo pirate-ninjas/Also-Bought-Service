@@ -46,7 +46,6 @@ class ItemList extends React.Component {
 
   slideLeft() {
     let { start, end } = this.state;
-    const { items } = this.props;
     if (!(start - 1 < 0)) {
       start -= 1;
       end -= 1;
@@ -60,7 +59,7 @@ class ItemList extends React.Component {
     const {
       start, end, leftButton, rightButton,
     } = this.state;
-    let rightVis = items.length > 4 ? rightButton : 'hidden';
+    const rightVis = items.length > 4 ? rightButton : 'hidden';
     items = items.slice(start, end);
     items = items.map((item, idx) => (
       <Item key={idx * mod} item={item} idx={start + idx} mod={mod} />
