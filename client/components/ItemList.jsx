@@ -39,7 +39,7 @@ class ItemList extends React.Component {
     const { start, end } = this.state;
     items = items.slice(start, end);
     items = items.map((item, idx) => (
-      <Item item={item} idx={idx} mod={mod} />
+      <Item item={item} idx={start + idx} mod={mod} />
     ));
     return (
       <div className="carousel">

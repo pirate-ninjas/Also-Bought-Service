@@ -26,7 +26,7 @@ class Item extends React.Component {
     let { view } = this.state;
     return (
       <div className="productcard" key={idx} onMouseEnter={this.show} onMouseLeave={this.hide}>
-        <div className="productimg"><img alt={item.name} src={`${item.img_url}/sig=${idx + mod}`} /></div>
+        <div className="productimg"><img alt={item.name} src={`${item.img_url}/sig=${idx * mod}`} /></div>
         <div className="brandname">{item.brand}</div>
         <div className="productname">{item.name}</div>
         <div className="rating">
@@ -35,8 +35,8 @@ class Item extends React.Component {
             style={{
               background: `linear-gradient(90deg, gold, gold ${getStars(item.rating)}%, transparent, transparent ${getStars(item.rating)}%)`,
               WebkitTextStroke: '1px goldenrod',
-              WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
+              WebkitBackgroundClip: 'text',
             }}
           >
             ★★★★★

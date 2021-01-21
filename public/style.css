@@ -7,6 +7,9 @@ body {
 
 .container {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 950px;
 }
 
 .carousel {
@@ -54,6 +57,8 @@ body {
 }
 
 .productcard {
+  width: 200px;
+  height: 220px;
   padding: 10px;
   position: relative;
 }
