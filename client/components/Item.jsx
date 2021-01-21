@@ -26,15 +26,17 @@ class Item extends React.Component {
     let { view } = this.state;
     return (
       <div className="productcard" key={idx} onMouseEnter={this.show} onMouseLeave={this.hide}>
-        <div className="productimg"><img alt={item.name} src={`${item.img_url}/sig=${idx * mod}`} /></div>
-        <div className="brandname">{item.brand}</div>
-        <div className="productname">{item.name}</div>
+        <div className="productimg"><a href={`https://www.rei.com/product/${item.itemNum}`}><img alt={item.name} src={`${item.img_url}/sig=${idx * mod + mod}`} /></a></div>
+        <a href={`https://www.rei.com/product/${item.itemNum}`}>
+          <div className="brandname">{item.brand}</div>
+          <div className="productname">{item.name}</div>
+        </a>
         <div className="rating">
           <span
             className="stars"
             style={{
-              background: `linear-gradient(90deg, gold, gold ${getStars(item.rating)}%, transparent, transparent ${getStars(item.rating)}%)`,
-              WebkitTextStroke: '1px goldenrod',
+              background: `linear-gradient(90deg, #ffd280, #ffd280 ${getStars(item.rating)}%, #d19646, #d19646 ${getStars(item.rating)}%, transparent, transparent ${getStars(item.rating) + 2}%)`,
+              WebkitTextStroke: '1px #d19646',
               WebkitTextFillColor: 'transparent',
               WebkitBackgroundClip: 'text',
             }}
