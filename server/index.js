@@ -16,6 +16,10 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname, '/../public')));
 
+app.get('/test', (req, res) => {
+  res.send('hello');
+});
+
 app.get('/api/products/:itemid/alsoliked', (req, res) => {
   const itemNum = parseInt(req.params.itemid, 10) + 1;
   let numOfProducts = 10;
