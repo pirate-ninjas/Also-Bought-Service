@@ -55,7 +55,8 @@ class ItemList extends React.Component {
   }
 
   render() {
-    let { mod, items } = this.props;
+    let { items } = this.props;
+    const { mod } = this.props;
     const {
       start, end, leftButton, rightButton,
     } = this.state;
@@ -77,7 +78,9 @@ class ItemList extends React.Component {
           ←
         </div>
         <div className="tray">
-          <div className="productSlide">{items}</div>
+          <div className="productSlide">
+            {items}
+          </div>
         </div>
         <div
           className="slideRight"

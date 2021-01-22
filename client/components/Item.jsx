@@ -25,10 +25,13 @@ class Item extends React.Component {
     }
     const { item, idx, mod } = this.props;
     const { view } = this.state;
+    let searchItem = item.name.split(' ');
+    searchItem.shift();
+    searchItem = searchItem.join('+');
     return (
       <div className="productcard" key={idx} onMouseEnter={this.show} onMouseLeave={this.hide}>
-        <div className="productimg"><a href={`https://www.rei.com/product/${item.itemNum}`}><img alt={item.name} src={`${item.img_url}/sig=${idx * mod + mod}`} /></a></div>
-        <a href={`https://www.rei.com/product/${item.itemNum}`}>
+        <div className="productimg"><a href={`https://www.rei.com/search?q=${searchItem}`}><img alt={item.name} src={`${item.img_url}/sig=${idx * mod + mod}`} /></a></div>
+        <a href={`https://www.rei.com/search?q=${searchItem}`}>
           <div className="brandname">{item.brand}</div>
           <div className="productname">{item.name}</div>
         </a>
