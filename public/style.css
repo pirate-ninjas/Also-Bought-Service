@@ -33,6 +33,7 @@ a:hover {
 }
 
 .tray {
+  
 }
 
 .slideLeft, .slideRight {
@@ -67,21 +68,57 @@ a:hover {
   display: flex;
   flex-direction: row;
   z-index: 1;
+  /* animation-name: slide-left;
+  animation-duration: 0.5s; */
 }
-
 .productcard {
+  display: block;
   width: 200px;
   height: 220px;
   padding: 10px;
   position: relative;
+  animation-name: slide-left;
+  animation-duration: 0.5s;
+  
+}
+
+.hideRight {
+  display: none;
+  animation: slide-right;
+  animation-duration: 5s;
+}
+
+.hideLeft {
+  display: none;
+  animation: slide-left;
+  animation-duration: 5s;
 }
 
 .productcard.active {
-  height: 700px;
+  /* height: 700px; */
 }
 
 .productcard:hover {
   box-shadow: 0px 10px 10px grey;
+  /* transition: background 20s ease-in-out; */
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(200px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .brandname, .reviewers, .price {

@@ -30,7 +30,7 @@ class Item extends React.Component {
     searchItem = searchItem.join('+');
     return (
       <div className="productcard" key={idx} onMouseEnter={this.show} onMouseLeave={this.hide} title="itemtest">
-        <div className="productimg"><a href={`https://www.rei.com/search?q=${searchItem}`}><img alt={item.name} src={`${item.img_url}/sig=${idx * mod + mod}`} /></a></div>
+        <div className="productimg"><a href={`https://www.rei.com/search?q=${searchItem}`}><img alt={item.name} src={`${item.img_url}/sig=${item.itemNum}`} /></a></div>
         <a href={`https://www.rei.com/search?q=${searchItem}`}>
           <div className="brandname">{item.brand}</div>
           <div className="productname">{item.name}</div>
