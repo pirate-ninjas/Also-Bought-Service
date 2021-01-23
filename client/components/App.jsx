@@ -9,7 +9,7 @@ class App extends React.Component {
       alsoliked: [],
       ultbought: [],
       ultprod: '',
-      item: 49,
+      item: 33,
     };
     this.alsoLiked = this.alsoLiked.bind(this);
     this.ultBought = this.ultBought.bind(this);
@@ -39,11 +39,11 @@ class App extends React.Component {
     const { alsoliked, ultbought, ultprod } = this.state;
     return (
       <div className="container">
-        <span id="title">People also liked</span>
+        <span className="title">People also liked</span>
         <div id="carousel1">
           <ItemList key="carousel1" items={alsoliked} mod={1} />
         </div>
-        <span id="title">
+        <span className="title">
           People shopping
           {' '}
           {ultprod}

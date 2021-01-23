@@ -55,14 +55,15 @@ class ItemList extends React.Component {
   }
 
   render() {
-    let { mod, items } = this.props;
+    let { items } = this.props;
+    const { mod } = this.props;
     const {
       start, end, leftButton, rightButton,
     } = this.state;
     const rightVis = items.length > 4 ? rightButton : 'hidden';
     items = items.slice(start, end);
     items = items.map((item, idx) => (
-      <Item key={idx * mod} item={item} idx={start + idx} mod={mod} />
+      <Item data-testid="items" key={idx * mod} item={item} idx={start + idx} mod={mod} />
     ));
     return (
       <div className="carousel">
@@ -77,7 +78,9 @@ class ItemList extends React.Component {
           ←
         </div>
         <div className="tray">
-          <div className="productSlide">{items}</div>
+          <div className="productSlide">
+            {items}
+          </div>
         </div>
         <div
           className="slideRight"
