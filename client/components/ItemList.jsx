@@ -63,7 +63,7 @@ class ItemList extends React.Component {
     const rightVis = items.length > 4 ? rightButton : 'hidden';
     items = items.slice(start, end);
     items = items.map((item, idx) => (
-      <Item data-testid="items" key={idx * mod} item={item} idx={start + idx} mod={mod} />
+      <Item key={idx * mod} item={item} idx={start + idx} mod={mod} />
     ));
     return (
       <div className="carousel">
