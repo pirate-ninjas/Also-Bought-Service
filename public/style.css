@@ -184,7 +184,7 @@ button.util:hover {
   box-shadow: inset 0 0 0 3px #4e4d49;
 }
 
-#title {
+.title {
   display: flex;
   flex-direction: column;
 }
