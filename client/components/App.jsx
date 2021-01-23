@@ -9,7 +9,7 @@ class App extends React.Component {
       alsoliked: [],
       ultbought: [],
       ultprod: '',
-      item: 33,
+      item: 50,
     };
     this.alsoLiked = this.alsoLiked.bind(this);
     this.ultBought = this.ultBought.bind(this);

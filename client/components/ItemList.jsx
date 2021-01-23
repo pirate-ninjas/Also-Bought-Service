@@ -16,6 +16,10 @@ class ItemList extends React.Component {
     this.hideButtons = this.hideButtons.bind(this);
   }
 
+  componentDidMount() {
+    console.log('component actually DID mount');
+  }
+
   hideButtons(start, end) {
     const { leftButton, rightButton } = this.state;
     const { items } = this.props;
@@ -61,10 +65,12 @@ class ItemList extends React.Component {
       start, end, leftButton, rightButton,
     } = this.state;
     const rightVis = items.length > 4 ? rightButton : 'hidden';
-    items = items.slice(start, end);
     items = items.map((item, idx) => (
       <Item key={idx * mod} item={item} idx={start + idx} mod={mod} />
     ));
+    const displayItems = items.slice(start, end);
+    const leftPreload = items[start - 1] ? items[start - 1] : items[0];
+    const rightPreload = items[end + 1] ? items[end + 1] : items[items.length - 1];
     return (
       <div className="carousel">
         <div
@@ -78,9 +84,11 @@ class ItemList extends React.Component {
           ←
         </div>
         <div className="tray">
+          <div className="productSlide hideLeft">{leftPreload}</div>
           <div className="productSlide">
-            {items}
+            {displayItems}
           </div>
+          <div className="productSlide hideRight">{rightPreload}</div>
         </div>
         <div
           className="slideRight"
