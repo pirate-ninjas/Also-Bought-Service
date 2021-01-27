@@ -5,18 +5,18 @@ class Item extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: 'onHoverHidden',
+      view: 'abs_onHoverHidden',
     };
     this.show = this.show.bind(this);
     this.hide = this.hide.bind(this);
   }
 
   show() {
-    this.setState({ view: 'onHoverDisplay' });
+    this.setState({ view: 'abs_onHoverDisplay' });
   }
 
   hide() {
-    this.setState({ view: 'onHoverHidden' });
+    this.setState({ view: 'abs_onHoverHidden' });
   }
 
   render() {
@@ -29,15 +29,15 @@ class Item extends React.Component {
     searchItem.shift();
     searchItem = searchItem.join('+');
     return (
-      <div className="productcard" key={idx} onMouseEnter={this.show} onMouseLeave={this.hide} title="itemtest">
-        <div className="productimg"><a href={`https://www.rei.com/search?q=${searchItem}`}><img alt={item.name} src={`${item.img_url}/sig=${item.itemNum}`} /></a></div>
-        <a href={`https://www.rei.com/search?q=${searchItem}`}>
-          <div className="brandname">{item.brand}</div>
-          <div className="productname">{item.name}</div>
+      <div className="abs_productcard" key={idx} onMouseEnter={this.show} onMouseLeave={this.hide} title="itemtest">
+        <div className="abs_productimg"><a className="abs_link" href={`https://www.rei.com/search?q=${searchItem}`}><img alt={item.name} src={`${item.img_url}/sig=${item.itemNum}`} /></a></div>
+        <a className="abs_link" href={`https://www.rei.com/search?q=${searchItem}`}>
+          <div className="abs_brandname">{item.brand}</div>
+          <div className="abs_productname">{item.name}</div>
         </a>
-        <div className="rating">
+        <div className="abs_rating">
           <span
-            className="stars"
+            className="abs_stars"
             style={{
               background: `linear-gradient(90deg, #ffd280, #ffd280 ${getStars(item.rating)}%, #d19646, #d19646 ${getStars(item.rating)}%, transparent, transparent ${getStars(item.rating) + 2}%)`,
               WebkitTextStroke: '1px #d19646',
@@ -47,27 +47,27 @@ class Item extends React.Component {
           >
             ★★★★★
           </span>
-          <span className="reviewers">
+          <span className="abs_reviewers">
             (
             {item.reviews}
             )
           </span>
         </div>
-        <div className="price">
+        <div className="abs_price">
           $
           {item.price}
           .98
         </div>
         <div className={view}>
-          <span className="description">
+          <span className="abs_description">
             {item.description}
             .
           </span>
-          <span className="color">
+          <span className="abs_color">
             <b>Colors:</b>
             {item.colors.map((color, idx2) => (
               <span
-                className="colorBlock"
+                className="abs_colorBlock"
                 style={{ color }}
                 key={idx2}
               >
@@ -75,24 +75,24 @@ class Item extends React.Component {
               </span>
             ))}
           </span>
-          <span className="features">
+          <span className="abs_features">
             <b>Features:</b>
             <ul>
               <li>{item.features[0]}</li>
               <li>{item.features[1]}</li>
             </ul>
           </span>
-          <div className="buttons">
+          <div className="abs_buttons">
             <span>
-              <button className="cart" type="button">
+              <button className="abs_cart" type="button">
                 Add to cart -- $
                 {item.price}
                 .98
               </button>
             </span>
-            <span className="wishreg">
-              <button className="util" type="button">Wish list</button>
-              <button className="util" type="button">Registry</button>
+            <span className="abs_wishreg">
+              <button className="abs_util" type="button">Wish list</button>
+              <button className="abs_util" type="button">Registry</button>
             </span>
           </div>
         </div>

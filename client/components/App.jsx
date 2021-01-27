@@ -38,12 +38,12 @@ class App extends React.Component {
   render() {
     const { alsoliked, ultbought, ultprod } = this.state;
     return (
-      <div className="container">
-        <span className="title">People also liked</span>
+      <div className="abs_container">
+        <span className="abs_title">People also liked</span>
         <div id="carousel1">
           <ItemList key="carousel1" items={alsoliked} mod={1} />
         </div>
-        <span className="title">
+        <span className="abs_title">
           People shopping
           {' '}
           {ultprod}

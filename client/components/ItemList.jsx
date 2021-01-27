@@ -16,10 +16,6 @@ class ItemList extends React.Component {
     this.hideButtons = this.hideButtons.bind(this);
   }
 
-  componentDidMount() {
-    console.log('component actually DID mount');
-  }
-
   hideButtons(start, end) {
     const { leftButton, rightButton } = this.state;
     const { items } = this.props;
@@ -72,9 +68,9 @@ class ItemList extends React.Component {
     const leftPreload = items[start - 1] ? items[start - 1] : items[0];
     const rightPreload = items[end + 1] ? items[end + 1] : items[items.length - 1];
     return (
-      <div className="carousel">
+      <div className="abs_carousel">
         <div
-          className="slideLeft"
+          className="abs_slideLeft"
           role="button"
           tabIndex={0}
           style={{ visibility: leftButton }}
@@ -83,15 +79,15 @@ class ItemList extends React.Component {
         >
           ←
         </div>
-        <div className="tray">
-          <div className="productSlide hideLeft">{leftPreload}</div>
-          <div className="productSlide">
+        <div className="abs_tray">
+          <div className="abs_productSlide abs_hideLeft">{leftPreload}</div>
+          <div className="abs_productSlide">
             {displayItems}
           </div>
-          <div className="productSlide hideRight">{rightPreload}</div>
+          <div className="abs_productSlide abs_hideRight">{rightPreload}</div>
         </div>
         <div
-          className="slideRight"
+          className="abs_slideRight"
           role="button"
           tabIndex={0}
           style={{ visibility: rightVis }}
