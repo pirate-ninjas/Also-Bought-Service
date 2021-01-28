@@ -7,7 +7,7 @@ class ItemList extends React.Component {
     super(props);
     this.state = {
       start: 0,
-      end: 4,
+      end: 6,
       leftButton: 'hidden',
       rightButton: 'visible',
     };
