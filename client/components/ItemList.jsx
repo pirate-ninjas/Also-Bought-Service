@@ -1,6 +1,8 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
-import React from 'react';
-import Item from './Item';
+import React, { lazy } from 'react';
+
+const Item = lazy(() => import('./Item'));
 
 class ItemList extends React.Component {
   constructor(props) {

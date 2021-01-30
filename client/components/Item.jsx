@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
 import React from 'react';
 
@@ -23,7 +24,7 @@ class Item extends React.Component {
     function getStars(rating) {
       return Math.floor((rating / 5) * 100);
     }
-    const { item, idx, mod } = this.props;
+    const { item, idx } = this.props;
     const { view } = this.state;
     let searchItem = item.name.split(' ');
     searchItem.shift();
