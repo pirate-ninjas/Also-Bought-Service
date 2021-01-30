@@ -36,7 +36,8 @@ app.get('/api/products/:itemid/alsoliked', (req, res) => {
       res.send(data);
     })
     .catch((err) => {
-      res.send(err);
+      console.log(err);
+      res.send(500);
     });
 });
 
@@ -57,7 +58,8 @@ app.get('/api/products/:itemid/ultbought', (req, res) => {
       res.send(data);
     })
     .catch((err) => {
-      res.send(err);
+      console.log(err);
+      res.send(500);
     });
 });
 
