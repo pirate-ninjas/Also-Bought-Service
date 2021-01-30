@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import axios from 'axios';
-import ItemList from './ItemList';
+
+const ItemList = lazy(() => import('./ItemList'));
 
 class App extends React.Component {
   constructor(props) {
