@@ -33,6 +33,7 @@ module.exports = {
     ],
   },
   resolve: { extensions: ['.js', '.jsx'] },
-  mode: 'development',
+  // mode: 'development',
+  mode: 'production',
   watch: true,
 };
